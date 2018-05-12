@@ -15,7 +15,7 @@ const config = {
       }
     }
   },
-  chromeDriver: ('../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.38' + (process.platform.indexOf('win') === 0 ? '.exe' : ''))
+  chromeDriver: ('../../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.38' + (process.platform.indexOf('win') === 0 ? '.exe' : ''))
 };
 
 exports.config = _.merge(baseConfig.config, config);

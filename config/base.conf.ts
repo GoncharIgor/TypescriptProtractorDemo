@@ -7,6 +7,7 @@ const AllureReporter = require('jasmine-allure-reporter');
 const allureResultsPath = path.join('./target/allure-xml-report');
 const log4jsConfig = require('./log4js');
 const log4js = require('log4js');
+import {browser} from 'protractor';
 
 const computersBaseConfig = {
   framework: 'jasmine2',
@@ -17,7 +18,7 @@ const computersBaseConfig = {
     print: function () {
     }
   },
-  specs: ['../typescript/tests/*.js'],
+  specs: ['../tests/*.js'],
   suites: {},
   params: {
     downloadPath: downloadPath,
@@ -37,7 +38,7 @@ function onPrepare() {
   browser.manage().window().setSize(1280, 1024);
   browser.manage().timeouts().implicitlyWait(3000);
 
-  require('../helpers/matchers');
+  require('../../helpers/matchers');
 
   //add jasmine spec reporter
   jasmine.getEnv().addReporter(new SpecReporter({

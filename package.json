@@ -41,7 +41,7 @@
     "build": "tsc",
     "clean": "rimraf typeScript/",
     "clean-build": "npm run clean && npm run build",
-    "test": "npm run clean-build && node config/flake.js config/chrome.conf.js",
+    "test": "npm run clean-build && node config/flake.js typeScript/config/chrome.conf.js",
     "wd-status": "node node_modules/protractor/bin/webdriver-manager status",
     "wd-update-chrome": "node node_modules/protractor/bin/webdriver-manager update --proxy=http://10.109.1.140:8080 --versions.chrome=2.38 --gecko false",
     "wd-update-firefox": "node node_modules/protractor/bin/webdriver-manager update --proxy=http://10.109.1.140:8080 --version.gecko='v0.19.1'",
