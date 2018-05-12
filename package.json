@@ -1,0 +1,53 @@
+{
+  "name": "computers-db",
+  "version": "1.0.0-develop.1",
+  "desription": "E2E Tests For Computer database",
+  "devDependencies": {
+    "@types/jasmine": "^2.8.4",
+    "@types/jasminewd2": "^2.0.3",
+    "@types/node": "^8.0.47",
+    "allure-commandline": "2.4.1",
+    "co": "4.6.0",
+    "del": "2.2.2",
+    "jasmine-allure-reporter": "1.0.2",
+    "jasmine-spec-reporter": "3.3.0",
+    "lodash": "4.17.4",
+    "log4js": "2.4.1",
+    "log4js-protractor-appender": "1.1.2",
+    "moment": "2.18.1",
+    "mountebank": "1.12.0",
+    "node-resemble-js": "0.2.0",
+    "pngjs": "3.3.2",
+    "protractor": "5.3.1",
+    "protractor-element-extend": "2.1.0",
+    "protractor-flake": "3.0.1",
+    "protractor-helpers": "1.1.0",
+    "q": "1.4.1",
+    "request": "2.85.0",
+    "request-promise": "4.2.2",
+    "selenium-server-standalone-jar": "3.9.1"
+    "ts-node": "^6.0.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2",
+    "typescript-eslint-parser": "^12.0.0",
+  },
+  "engines": {
+    "node": "^8",
+    "npm": "^5"
+  },
+  "scripts": {
+    "allure-generate-report": "node ./node_modules/allure-commandline/bin/allure generate ./target/allure-xml-report -o ./target/allure-html-report",
+    "build": "tsc",
+    "clean": "rimraf typeScript/",
+    "clean-build": "npm run clean && npm run build",
+    "test": "npm run clean-build && node node_modules/ds-e2e-gulp/config/flake.js e2e/config/chrome.conf.js",
+    "wd-status": "node node_modules/protractor/bin/webdriver-manager status",
+    "wd-update-chrome": "node node_modules/protractor/bin/webdriver-manager update --proxy=http://10.109.1.140:8080 --versions.chrome=2.35 --gecko false",
+    "wd-update-firefox": "node node_modules/protractor/bin/webdriver-manager update --proxy=http://10.109.1.140:8080 --version.gecko='v0.19.1'",
+    "wd-update-ie": "node node_modules/protractor/bin/webdriver-manager update --proxy=http://10.109.1.140:8080 --ie --gecko false"
+  },
+  "repository": {
+    "type": "git",
+  //  "url": "https://"
+  }
+}
