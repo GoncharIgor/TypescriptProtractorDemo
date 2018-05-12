@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const smsgBaseConfig = require('./computers.base.conf');
+const computersBaseConfig = require('./computers.base.conf');
 
 const config = {
   capabilities: {
@@ -11,8 +11,8 @@ const config = {
     version: '11'
   },
   localSeleniumStandaloneOpts: {
-    jvmArgs: ['-Dwebdriver.ie.driver=node_modules/protractor/node_modules/webdriver-manager/selenium/IEDriverServer3.11.1.exe']
+    jvmArgs: ['-Dwebdriver.ie.driver=node_modules/protractor/node_modules/webdriver-manager/selenium/IEDriverServer3.12.0.exe']
   }
 };
 
-exports.config = _.merge(smsgBaseConfig.config, config);
+exports.config = _.merge(computersBaseConfig.config, config);

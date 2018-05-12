@@ -33,7 +33,7 @@ function onPrepare() {
   browser.manage().window().setSize(1280, 1024);
   browser.manage().timeouts().implicitlyWait(3000);
 
-  require('./e2e/helpers/matchers');
+  require('./helpers/matchers');
 
   //add jasmine spec reporter
   jasmine.getEnv().addReporter(new SpecReporter({

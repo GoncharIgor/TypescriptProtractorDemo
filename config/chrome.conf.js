@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const smsgBaseConfig = require('./computers.base.conf');
+const computersBaseConfig = require('./computers.base.conf');
 
 const config = {
   capabilities: {
@@ -15,7 +15,7 @@ const config = {
       }
     }
   },
-  chromeDriver: ('../../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.38' + (process.platform.indexOf('win') === 0 ? '.exe' : ''))
+  chromeDriver: ('../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.38' + (process.platform.indexOf('win') === 0 ? '.exe' : ''))
 };
 
-exports.config = _.merge(smsgBaseConfig.config, config);
+exports.config = _.merge(computersBaseConfig.config, config);

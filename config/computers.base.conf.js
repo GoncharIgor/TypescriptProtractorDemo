@@ -1,11 +1,11 @@
 const _ = require('lodash');
-const baseConfig = require('ds-e2e-gulp/protractor.jasmine.conf');
+const baseConfig = require('../protractor.jasmine.conf');
 
 const computersBaseConfig = {
-  specs: ['./../../typescript/tests/*.js'],
+  specs: ['../typescript/tests/*.js'],
   suites: {},
   params: {
-    baseUrl: 'http://computer-database.herokuapp.com/',
+    baseUrl: 'http://computer-database.herokuapp.com',
   }
 };
 
