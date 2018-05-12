@@ -5,10 +5,10 @@ const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 const downloadPath = path.join(__dirname, '\\downloads', '\\' + Date.now());
 const AllureReporter = require('jasmine-allure-reporter');
 const allureResultsPath = path.join('./target/allure-xml-report');
-const log4jsConfig = require('./config/log4js');
+const log4jsConfig = require('./log4js');
 const log4js = require('log4js');
 
-exports.config = {
+const computersBaseConfig = {
   framework: 'jasmine2',
   seleniumServerJar: jar.path,
   allScriptsTimeout: 20000,
@@ -17,14 +17,18 @@ exports.config = {
     print: function () {
     }
   },
-  onPrepare: onPrepare,
-  onComplete: onComplete,
-
+  specs: ['../typescript/tests/*.js'],
+  suites: {},
   params: {
     downloadPath: downloadPath,
     remote: false,
-  }
+    baseUrl: 'http://computer-database.herokuapp.com',
+  },
+  onPrepare: onPrepare,
+  onComplete: onComplete
 };
+
+exports.config = computersBaseConfig;
 
 function onPrepare() {
   log4jsConfig.call();
@@ -33,7 +37,7 @@ function onPrepare() {
   browser.manage().window().setSize(1280, 1024);
   browser.manage().timeouts().implicitlyWait(3000);
 
-  require('./helpers/matchers');
+  require('../helpers/matchers');
 
   //add jasmine spec reporter
   jasmine.getEnv().addReporter(new SpecReporter({

@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const smsgBaseConfig = require('./computers.base.conf');
+const baseConfig = require('./base.conf');
 
 const config = {
   capabilities: {
@@ -20,5 +20,5 @@ const config = {
   }
 };
 
-exports.config = _.merge(smsgBaseConfig.config, config);
+exports.config = _.merge(baseConfig.config, config);
 

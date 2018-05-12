@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const computersBaseConfig = require('./computers.base.conf');
+const baseConfig = require('./base.conf');
 
 const config = {
   capabilities: {
@@ -15,4 +15,4 @@ const config = {
   }
 };
 
-exports.config = _.merge(computersBaseConfig.config, config);
+exports.config = _.merge(baseConfig.config, config);
