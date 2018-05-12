@@ -1,0 +1,16 @@
+.idea
+*.iml
+reports
+node_modules
+.tmp
+.iconFont
+.sass-cache
+app/bower_components
+npm-debug.log
+.npmrc
+.DS_Store
+*.patch
+coverage
+test-reports
+phantomjsdriver.log
+*.tgz

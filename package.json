@@ -2,6 +2,7 @@
   "name": "computers-db",
   "version": "1.0.0-develop.1",
   "desription": "E2E Tests For Computer database",
+  "author": "Igor Gonchar",
   "devDependencies": {
     "@types/jasmine": "^2.8.4",
     "@types/jasminewd2": "^2.0.3",
@@ -48,6 +49,7 @@
   },
   "repository": {
     "type": "git",
-  //  "url": "https://"
-  }
+    "url": "https://github.com/GoncharIgor/TypescriptProtractor.git"
+  },
+  "license": "MIT"
 }
