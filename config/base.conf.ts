@@ -37,6 +37,7 @@ function onPrepare() {
 
   browser.manage().window().setSize(1280, 1024);
   browser.manage().timeouts().implicitlyWait(3000);
+  browser.ignoreSynchronization = true;
 
   require('../../helpers/matchers');
 

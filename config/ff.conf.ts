@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const baseConfig = require('./base.conf');
+export{};
 
 const config = {
   capabilities: {
