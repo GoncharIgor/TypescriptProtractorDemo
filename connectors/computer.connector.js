@@ -1,32 +1,19 @@
 const rp = require('request-promise');
 
-const deleteMessageRequest = require('./request.models/delete.message/delete.message');
-const sendMessageRequest = require('./request.models/send.message/send.message');
+const addComputerRequest = require('./request.models/delete.message/delete.message');
 
-class MessageConnector {
+export class ComputerConnector {
 
-  async sendMessage(requestBody) {
-    sendMessageRequest.body = requestBody;
+  async addComputer(requestBody) {
+    addComputerRequest.body = requestBody;
     let id = null;
     try {
-      browser.logger.info('[Send] Sending message with subject:', sendMessageRequest.body.subject);
-      let response = await rp(sendMessageRequest);
-      id = response.body.messageId;
+      browser.logger.info('[Save] Adding computer with name:', addComputerRequest.body.name);
+      let response = await rp(addComputerRequest);
+      id = response.body.id;
     } catch (error) {
       browser.logger.error(error);
     }
     return id;
   }
-
-  async deleteMessage(messageId) {
-    deleteMessageRequest.body.messageIds = [messageId];
-    try {
-      browser.logger.info('[Delete] message with id:', messageId);
-      return await rp(deleteMessageRequest);
-    } catch (error) {
-      browser.logger.error(error);
-    }
-  }
 }
-
-module.exports = new MessageConnector();

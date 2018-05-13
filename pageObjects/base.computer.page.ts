@@ -1,5 +1,5 @@
 import {$, ElementFinder, browser} from 'protractor';
-import {BasePage} from './basePage';
+import {BasePage} from './base.page';
 
 export class BaseComputerPage extends BasePage {
   appNameHeader: ElementFinder;

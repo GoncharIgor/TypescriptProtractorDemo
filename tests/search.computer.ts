@@ -1,4 +1,4 @@
-import {ComputersListPage} from '../pageObjects/computersListPage';
+import {ComputersListPage} from '../pageObjects/computers.list.page';
 import {ComputerSearchSection} from '../pageObjects/page.fragments/computer.search.form';
 import {$, ElementFinder, browser} from 'protractor';
 const computerSearchSection = new ComputerSearchSection($("#actions form"));

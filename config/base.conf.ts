@@ -39,7 +39,7 @@ function onPrepare() {
   browser.manage().timeouts().implicitlyWait(3000);
   browser.ignoreSynchronization = true;
 
-  require('../../helpers/matchers');
+  require('../helpers/matchers');
 
   //add jasmine spec reporter
   jasmine.getEnv().addReporter(new SpecReporter({

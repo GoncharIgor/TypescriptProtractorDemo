@@ -1,7 +1,6 @@
 import {ComputerSearchSection} from "./computer.search.form"
 import {BaseFragment} from "protractor-element-extend";
 import {element, by, $, ElementFinder, ElementArrayFinder} from 'protractor';
-
 const ArrayHelpers = require("../../helpers/array.helpers");
 
 const computerSearch = new ComputerSearchSection($("#actions form"));
@@ -27,15 +26,13 @@ export class ComputerTable extends BaseFragment {
   }
 
   async isComputerInfoInTheTableEqualsExpected(initialComputerData) {
-    await computerSearch.findComputerInTheTable(initialComputerData[0]);
-
     const actualComputerInfo = [];
+
+    await computerSearch.findComputerInTheTable(initialComputerData[0]);
     actualComputerInfo.push(await this.computerNamesInTheTable.get(0).getText());
-    actualComputerInfo.push(this.computerIntroducedDateInTheTable.getText());
-    actualComputerInfo.push(this.computerDiscontinuedDateInTheTable.getText());
-    actualComputerInfo.push(this.computerCompanyNameInTheTable.getText());
+    actualComputerInfo.push(await this.computerIntroducedDateInTheTable.getText());
+    actualComputerInfo.push(await this.computerDiscontinuedDateInTheTable.getText());
+    actualComputerInfo.push(await this.computerCompanyNameInTheTable.getText());
     return ArrayHelpers.arraysEqual(initialComputerData, actualComputerInfo);
   }
 }
-
-module.exports = ComputerTable;

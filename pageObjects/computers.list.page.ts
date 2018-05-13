@@ -1,5 +1,5 @@
 import {$, ElementFinder, browser} from 'protractor';
-import {BaseComputerPage} from "./baseComputerPage";
+import {BaseComputerPage} from "./base.computer.page";
 
 export class ComputersListPage extends BaseComputerPage {
 
