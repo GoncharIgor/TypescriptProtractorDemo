@@ -3,10 +3,12 @@ import {BasePage} from './base.page';
 
 export class BaseComputerPage extends BasePage {
   appNameHeader: ElementFinder;
+  pageHeader: ElementFinder;
 
   constructor(title: string) {
     super(title);
     this.appNameHeader = $(".fill>a");
+    this.pageHeader = $("#main>h1");
   }
 
   async clickAppHeader(): Promise<void> {

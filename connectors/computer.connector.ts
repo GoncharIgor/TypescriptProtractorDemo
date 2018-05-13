@@ -1,6 +1,8 @@
 const rp = require('request-promise');
+import {browser} from "protractor";
 
-const addComputerRequest = require('./request.models/delete.message/delete.message');
+
+const addComputerRequest = require('./request.models/add.computer/add.computer');
 
 export class ComputerConnector {
 

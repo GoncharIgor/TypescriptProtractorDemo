@@ -1,4 +1,4 @@
-import {$, browser} from 'protractor';
+import {$, browser, protractor} from 'protractor';
 
 export class BasePage {
   pageTitle: string;
@@ -9,5 +9,13 @@ export class BasePage {
 
   async refreshPage(): Promise<void> {
     await browser.refresh();
+  }
+
+  async hitEnter() {
+    await browser.actions().sendKeys(protractor.Key.ENTER).perform();
+  }
+
+  async clickTab() {
+    await $("body").sendKeys(protractor.Key.TAB);
   }
 }

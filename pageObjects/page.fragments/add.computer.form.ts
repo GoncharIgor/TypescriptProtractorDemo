@@ -1,7 +1,7 @@
 import {BaseFragment} from "protractor-element-extend";
 import {element, by, $, ElementFinder} from 'protractor';
 
-export class AddComputerFormFields extends BaseFragment {
+export class AddComputerForm extends BaseFragment {
   computerNameInputField: ElementFinder;
   computerNameInputFieldLabel: ElementFinder;
   introducedDateInputField: ElementFinder;

@@ -1,7 +1,7 @@
 import {BaseFragment} from "protractor-element-extend";
 import {element, by, ElementFinder} from 'protractor';
 
-export class ComputerSearchSection extends BaseFragment {
+export class ComputerSearchForm extends BaseFragment {
   filterInputField: ElementFinder;
   filterSubmitButton: ElementFinder;
 
