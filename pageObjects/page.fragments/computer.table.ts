@@ -1,9 +1,10 @@
-import {ComputerSearchSection} from "./computer.search.form"
 import {BaseFragment} from "protractor-element-extend";
-import {element, by, $, ElementFinder, ElementArrayFinder} from 'protractor';
+import {ComputerSearchForm} from "./computer.search.form";
+import {element, by, $, ElementFinder, ElementArrayFinder} from "protractor";
+
 const ArrayHelpers = require("../../helpers/array.helpers");
 
-const computerSearch = new ComputerSearchSection($("#actions form"));
+const computerSearch = new ComputerSearchForm($("#actions form"));
 
 export class ComputerTable extends BaseFragment {
   tableHeaderColumns: ElementArrayFinder;
