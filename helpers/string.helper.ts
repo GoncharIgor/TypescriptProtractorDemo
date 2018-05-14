@@ -1,6 +1,6 @@
 export class StringHelper {
 
-  static generateRandomString(stringLength: number): string {
+  public static generateRandomString(stringLength: number): string {
     let text = "";
     const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -10,5 +10,4 @@ export class StringHelper {
 
     return text;
   }
-
 }

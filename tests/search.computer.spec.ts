@@ -1,6 +1,6 @@
-import {$, browser} from "protractor";
-import {ComputerSearchForm} from "../pageObjects/page.fragments/computer.search.form";
+import {$} from "protractor";
 import {ComputersListPage} from "../pageObjects/computers.list.page";
+import {ComputerSearchForm} from "../pageObjects/page.fragments/computer.search.form";
 
 const computersListPage = new ComputersListPage();
 const computerSearchSection = new ComputerSearchForm($("#actions form"));
@@ -13,6 +13,5 @@ describe("SEARCH: computer in the table", () => {
 
   it("Search for the first computer in the table", async (): Promise<any> => {
     await  computerSearchSection.findComputerInTheTable("ACE");
-    await browser.sleep(3000);
   });
 });

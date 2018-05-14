@@ -1,21 +1,21 @@
-import {$, browser, protractor} from 'protractor';
+import {$, browser, protractor} from "protractor";
 
-export class BasePage {
-  pageTitle: string;
+export abstract class BasePage {
+  protected pageTitle: string;
 
   constructor(title: string) {
     this.pageTitle = title;
   }
 
-  async refreshPage(): Promise<void> {
+  public async refreshPage(): Promise<void> {
     await browser.refresh();
   }
 
-  async hitEnter() {
+  public async hitEnter() {
     await browser.actions().sendKeys(protractor.Key.ENTER).perform();
   }
 
-  async clickTab() {
+  public async clickTab() {
     await $("body").sendKeys(protractor.Key.TAB);
   }
 }

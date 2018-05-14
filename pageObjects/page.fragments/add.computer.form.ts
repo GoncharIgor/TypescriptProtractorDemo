@@ -1,5 +1,5 @@
+import {$, by, element, ElementFinder} from "protractor";
 import {BaseFragment} from "protractor-element-extend";
-import {element, by, $, ElementFinder} from 'protractor';
 
 export class AddComputerForm extends BaseFragment {
   computerNameInputField: ElementFinder;
@@ -23,7 +23,7 @@ export class AddComputerForm extends BaseFragment {
     this.companySelectBoxLabel = $("label[for='company']");
   }
 
-  async fillInAllFields(name: string, introducedDate:string, discontinuedDate:string, company:string) {
+  public async fillInAllFields(name: string, introducedDate: string, discontinuedDate: string, company: string) {
     await this.computerNameInputField.sendKeys(name);
     await this.introducedDateInputField.sendKeys(introducedDate);
     await this.discontinuedDateInputField.sendKeys(discontinuedDate);

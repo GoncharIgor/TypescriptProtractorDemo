@@ -1,9 +1,9 @@
-import {$, ElementFinder, browser} from 'protractor';
-import {BasePage} from './base.page';
+import {$, browser, ElementFinder} from "protractor";
+import {BasePage} from "./base.page";
 
-export class BaseComputerPage extends BasePage {
-  appNameHeader: ElementFinder;
-  pageHeader: ElementFinder;
+export abstract class BaseComputerPage extends BasePage {
+  protected appNameHeader: ElementFinder;
+  protected pageHeader: ElementFinder;
 
   constructor(title: string) {
     super(title);
@@ -11,16 +11,20 @@ export class BaseComputerPage extends BasePage {
     this.pageHeader = $("#main>h1");
   }
 
-  async clickAppHeader(): Promise<void> {
+  public async clickAppHeader(): Promise<void> {
     await this.appNameHeader.click();
   }
 
-  async openComputersListPage(): Promise<void> {
-    browser.logger.info('[Navigate] to Computers list page');
+  public async openComputersListPage(): Promise<void> {
+    browser.logger.info("[Navigate] to Computers list page");
     await browser.driver.navigate().to(`${browser.params.baseUrl}/computers`);
   }
 
-  async getPageHeaderText() {
+  public async getPageHeaderText() {
     return await this.pageHeader.getText();
+  }
+
+  public async getAppHeaderText() {
+    return await this.appNameHeader.getText();
   }
 }

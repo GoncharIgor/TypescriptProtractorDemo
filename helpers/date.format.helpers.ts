@@ -1,5 +1,5 @@
-const moment = require('moment');
-const dateFormat = 'DD/MM/YYYY';
+const moment = require("moment");
+const dateFormat = "DD/MM/YYYY";
 
 class DateFormatter {
   /**
@@ -16,9 +16,9 @@ class DateFormatter {
    * @param {Number} numberOfDays to be added to the date
    * @returns {String}
    */
-  static incrementDatePerNumberOfDays(date, numberOfDays) {
+  public static incrementDatePerNumberOfDays(date, numberOfDays) {
     let initialDate = moment(date, dateFormat);
-    return initialDate.add(numberOfDays, 'days');
+    return initialDate.add(numberOfDays, "days");
   }
 
   /**
@@ -27,9 +27,9 @@ class DateFormatter {
    * @param {Number} numberOfMonths to be added to the date
    * @returns {String}
    */
-  static incrementDatePerNumberOfMonths(date, numberOfMonths) {
+  public static incrementDatePerNumberOfMonths(date, numberOfMonths) {
     let initialDate = moment(date, dateFormat);
-    return initialDate.add(numberOfMonths, 'M');
+    return initialDate.add(numberOfMonths, "M");
   }
 }
 

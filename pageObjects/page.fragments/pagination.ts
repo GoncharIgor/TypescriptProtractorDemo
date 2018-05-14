@@ -1,5 +1,5 @@
 import {BaseFragment} from "protractor-element-extend";
-import {element, by, $, ElementFinder} from 'protractor';
+import {$, by, element, ElementFinder} from "protractor";
 
 const ArrayHelpers = require("../../helpers/array.helpers");
 
@@ -26,20 +26,20 @@ export class Pagination extends BaseFragment {
     this.paginationPreviousButtonParentWrapper = element(by.xpath(`${this.paginationPreviousButtonSelector}${this.paginationNextButtonParentWrapperSelector}`));
   }
 
-  async getPaginationBlockText() {
+  public async getPaginationBlockText() {
     return await this.currentPaginationInfo.getText();
   }
 
-  async getTotalAmountOfComputersInPagination() {
-    let amount = await this.currentPaginationInfo.getText();
+  public async getTotalAmountOfComputersInPagination() {
+    const amount = await this.currentPaginationInfo.getText();
     return ArrayHelpers.splitStringIntoArrayByAndGetIndex(amount, " ", "last");
   }
 
-  async clickNextButton() {
+  public async clickNextButton() {
     await this.paginationNextButton.click();
   }
 
-  async clickPreviousButton() {
+  public async clickPreviousButton() {
     await this.paginationPreviousButton.click();
   }
 }

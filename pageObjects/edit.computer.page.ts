@@ -1,5 +1,5 @@
-import {AddNewComputerPage} from "./add.new.computer.page";
 import {$, ElementFinder} from "protractor";
+import {AddNewComputerPage} from "./add.new.computer.page";
 
 export class EditComputerPage extends AddNewComputerPage {
   deleteThisComputerButton: ElementFinder;
@@ -9,7 +9,7 @@ export class EditComputerPage extends AddNewComputerPage {
     this.deleteThisComputerButton = $(".btn.danger");
   }
 
-  async deleteComputer() {
+  public async deleteComputer() {
     await this.deleteThisComputerButton.click();
   }
 }

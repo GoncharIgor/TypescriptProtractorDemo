@@ -1,6 +1,6 @@
 export class ArrayHelpers {
 
-  static arraysEqual(a, b) {
+  public static arraysEqual(a, b) {
     if (a === b) return true;
     if (a == null || b == null) return false;
     if (a.length != b.length) return false;
@@ -14,16 +14,7 @@ export class ArrayHelpers {
     return true;
   }
 
-  static clone(obj) {
-    if (obj == null || typeof obj !== "object") return obj;
-    const copy = obj.constructor();
-    for (const attr in obj) {
-      if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
-    }
-    return copy;
-  }
-
-  static splitStringIntoArrayByAndGetIndex(text, by, index) {
+  public static splitStringIntoArrayByAndGetIndex(text, by, index) {
     let result;
     text = text.split(by);
 
