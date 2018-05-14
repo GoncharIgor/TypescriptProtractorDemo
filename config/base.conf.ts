@@ -16,7 +16,7 @@ const computersBaseConfig = {
   jasmineNodeOpts: {
     defaultTimeoutInterval: 100000
   },
-  specs: ["../tests/add.computer.spec.js"],
+  specs: ["../tests/*.js"],
   suites: {},
   params: {
     downloadPath: downloadPath,

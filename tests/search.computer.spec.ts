@@ -1,6 +1,6 @@
 import {$} from "protractor";
-import {ComputersListPage} from "../pageObjects/computers.list.page";
-import {ComputerSearchForm} from "../pageObjects/page.fragments/computer.search.form";
+import {ComputersListPage} from "../page.objects/computers.list.page";
+import {ComputerSearchForm} from "../page.objects/page.fragments/computer.search.form";
 
 const computersListPage = new ComputersListPage();
 const computerSearchSection = new ComputerSearchForm($("#actions form"));
