@@ -33,50 +33,7 @@ describe("ADD: new computer", () => {
   });
 });
 
-describe("AMOUNT: Total computers amount check", () => {
-  const computersListPage = new ComputersListPage();
-  const addNewComputerPage = new AddNewComputerPage();
-  const editComputerPageObject = new EditComputerPage();
-
-  const name = StringHelper.generateRandomString(10);
-  const introducedDate = "2017-01-14";
-  const discontinuedDate = "2017-01-15";
-  const company = "Sony";
-
-  beforeEach(async (): Promise<any> => {
-    await browser.get("http://computer-database.herokuapp.com/computers");
-  });
-
-  it("Computers total amount should be increased by 1 after adding new computer", async () => {
-    const initialTotal = await computersListPage.getComputersCount();
-    await computersListPage.addNewComputerButton.click();
-    await addNewComputerPage.addComputer(name, introducedDate, discontinuedDate, company);
-    const resultTotal = await computersListPage.getComputersCount();
-
-    expect(+initialTotal + 1).toBe(+resultTotal);
-  });
-
-  it("Computers total amount should be decreased by 1 after deleting the computer", async () => {
-    const initialTotal = await computersListPage.getComputersCount();
-    await computersListPage.computerSearchForm.findComputerInTheTable(name);
-    await computersListPage.navigateToEditComputerPage();
-    await editComputerPageObject.deleteComputer();
-    const resultTotal = await computersListPage.getComputersCount();
-
-    expect(+initialTotal - 1).toEqual(+resultTotal);
-  });
-
-  it("Computers total amount should not change id computer adding is canceled", async () => {
-    const initialTotal = await computersListPage.getComputersCount();
-    await computersListPage.addNewComputerButton.click();
-    await addNewComputerPage.clickCancelButton();
-    const resultTotal = await computersListPage.getComputersCount();
-
-    expect(initialTotal).toEqual(resultTotal);
-  });
-});
-
-describe("Add new computer functionality works correctly", () => {
+describe("CANCELLATION: cancel computer functionality works correctly", () => {
   const computersListPage = new ComputersListPage();
   const addNewComputerPage = new AddNewComputerPage();
 
@@ -95,23 +52,5 @@ describe("Add new computer functionality works correctly", () => {
 
     await expect(computersListPage.getAppHeaderText()).toEqual("Play sample application — Computer database");
     await expect(browser.isElementPresent(computersListPage.messageWarning)).toBe(false);
-  });
-});
-
-describe("VALIDATION: Add new computer validation functionality works correctly", () => {
-  const addNewComputerPage = new AddNewComputerPage();
-  const introducedDate = "2017-01-14";
-  const discontinuedDate = "2017-01-15";
-  const company = "Sony";
-
-  beforeEach(async () => {
-    await browser.get("http://computer-database.herokuapp.com/computers/new");
-  });
-
-  it("Computer should not be added if Computer name field is empty", async () => {
-    await addNewComputerPage.addComputer("", introducedDate, discontinuedDate, company);
-
-    await expect(addNewComputerPage.getPageHeaderText()).toEqual("Add a computer");
-    await expect((addNewComputerPage.emptyComputerNameErrorNotification).getAttribute("class")).toMatch("clearfix error");
   });
 });
