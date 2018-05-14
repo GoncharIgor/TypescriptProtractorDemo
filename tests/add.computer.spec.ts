@@ -33,7 +33,7 @@ describe("ADD: new computer", () => {
   });
 });
 
-describe("Add/delete computer functionality", () => {
+describe("AMOUNT: Total computers amount check", () => {
   const computersListPage = new ComputersListPage();
   const addNewComputerPage = new AddNewComputerPage();
   const editComputerPageObject = new EditComputerPage();
@@ -98,7 +98,7 @@ describe("Add new computer functionality works correctly", () => {
   });
 });
 
-describe("Add new computer validation functionality works correctly", () => {
+describe("VALIDATION: Add new computer validation functionality works correctly", () => {
   const addNewComputerPage = new AddNewComputerPage();
   const introducedDate = "2017-01-14";
   const discontinuedDate = "2017-01-15";
