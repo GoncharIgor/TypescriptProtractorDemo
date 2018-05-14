@@ -1,29 +1,27 @@
-const path = require('path');
-const del = require('del');
-const jar = require('selenium-server-standalone-jar');
-const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
-const downloadPath = path.join(__dirname, '\\downloads', '\\' + Date.now());
-const AllureReporter = require('jasmine-allure-reporter');
-const allureResultsPath = path.join('./target/allure-xml-report');
-const log4jsConfig = require('./log4js');
-const log4js = require('log4js');
-import {browser} from 'protractor';
+const path = require("path");
+const del = require("del");
+const jar = require("selenium-server-standalone-jar");
+const SpecReporter = require("jasmine-spec-reporter").SpecReporter;
+const downloadPath = path.join(__dirname, "\\downloads", "\\" + Date.now());
+const AllureReporter = require("jasmine-allure-reporter");
+const allureResultsPath = path.join("./target/allure-xml-report");
+const log4jsConfig = require("./log4js");
+const log4js = require("log4js");
+import {browser} from "protractor";
 
 const computersBaseConfig = {
-  framework: 'jasmine2',
+  framework: "jasmine2",
   seleniumServerJar: jar.path,
   allScriptsTimeout: 20000,
   jasmineNodeOpts: {
-    defaultTimeoutInterval: 100000,
-    print: function () {
-    }
+    defaultTimeoutInterval: 100000
   },
-  specs: ['../tests/*.js'],
+  specs: ["../tests/add.computer.spec.js"],
   suites: {},
   params: {
     downloadPath: downloadPath,
     remote: false,
-    baseUrl: 'http://computer-database.herokuapp.com',
+    baseUrl: "http://computer-database.herokuapp.com",
   },
   onPrepare: onPrepare,
   onComplete: onComplete
@@ -33,15 +31,15 @@ exports.config = computersBaseConfig;
 
 function onPrepare() {
   log4jsConfig.call();
-  browser.logger = log4js.getLogger('BASE_LOGGER');
+  browser.logger = log4js.getLogger("BASE_LOGGER");
 
   browser.manage().window().setSize(1280, 1024);
   browser.manage().timeouts().implicitlyWait(3000);
   browser.ignoreSynchronization = true;
 
-  require('../helpers/matchers');
+  require("../helpers/matchers");
 
-  //add jasmine spec reporter
+  // add jasmine spec reporter
   jasmine.getEnv().addReporter(new SpecReporter({
     spec: {
       displaySuccessful: false,
@@ -60,14 +58,14 @@ function onPrepare() {
       displayDuration: true,
     },
     colors: {
-      success: 'green',
-      failure: 'red',
-      pending: 'yellow'
+      success: "green",
+      failure: "red",
+      pending: "yellow"
     },
     prefixes: {
-      success: '✓ ',
-      failure: '✗ ',
-      pending: '* '
+      success: "✓ ",
+      failure: "✗ ",
+      pending: "* "
     },
     customProcessors: []
   }));
@@ -76,7 +74,7 @@ function onPrepare() {
     resultsDir: allureResultsPath
   }));
 
-  //efg custom reporter
+  // efg custom reporter
   jasmine.getEnv().addReporter({
     suiteStarted: (result) => {
       browser.logger.info(`- - - - SUITE STARTED - - - - ${result.description}`);
@@ -91,7 +89,7 @@ function onPrepare() {
     }
   });
 
-  //clean allure xmls from previous run
+  // clean allure xmls from previous run
   del([allureResultsPath], {force: true});
 }
 

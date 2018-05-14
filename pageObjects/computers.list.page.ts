@@ -1,4 +1,4 @@
-import {$, ElementFinder, element, by, browser} from 'protractor';
+import {$, ElementFinder, element, by, browser} from "protractor";
 import {BaseComputerPage} from "./base.computer.page";
 import {ComputerSearchForm} from "./page.fragments/computer.search.form";
 import {ComputerTable} from "./page.fragments/computer.table";

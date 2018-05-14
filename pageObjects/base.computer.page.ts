@@ -15,8 +15,12 @@ export class BaseComputerPage extends BasePage {
     await this.appNameHeader.click();
   }
 
-  async openComputersListPage(): Promise<void>{
+  async openComputersListPage(): Promise<void> {
     browser.logger.info('[Navigate] to Computers list page');
     await browser.driver.navigate().to(`${browser.params.baseUrl}/computers`);
+  }
+
+  async getPageHeaderText() {
+    return await this.pageHeader.getText();
   }
 }
