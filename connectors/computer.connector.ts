@@ -5,7 +5,7 @@ const addComputerRequest = require("./request.models/add.computer/add.computer")
 
 export class ComputerConnector {
 
-  async addComputer(requestBody) {
+  public async addComputer(requestBody) {
     addComputerRequest.body = requestBody;
     let id = null;
     try {
