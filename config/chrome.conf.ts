@@ -1,22 +1,22 @@
-const _ = require('lodash');
-const baseConfig = require('./base.conf');
+const _ = require("lodash");
+const baseConfig = require("./base.conf");
 export{};
 
 const config = {
   capabilities: {
-    browserName: 'chrome',
+    browserName: "chrome",
     chromeOptions: {
-      args: ['--no-sandbox', '--test-type=browser', 'disable-extensions', '--disable-infobars'],
+      args: ["--no-sandbox", "--test-type=browser", "disable-extensions", "--disable-infobars"],
       prefs: {
-        'plugins.always_open_pdf_externally': true,
-        'download': {
+        "plugins.always_open_pdf_externally": true,
+        "download": {
           prompt_for_download: false,
           directory_upgrade: true
         }
       }
     }
   },
-  chromeDriver: ('../../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.38' + (process.platform.indexOf('win') === 0 ? '.exe' : ''))
+  chromeDriver: ("../../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.38" + (process.platform.indexOf("win") === 0 ? ".exe" : ""))
 };
 
 exports.config = _.merge(baseConfig.config, config);

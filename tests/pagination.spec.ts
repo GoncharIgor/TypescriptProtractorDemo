@@ -33,20 +33,17 @@ describe("PAGINATION: Computer-database index page layout verification", () => {
 
   it("Pagination should show the correct total amount of computers", async () => {
     const initialTotal = await computersListPage.getComputersCount();
-    console.log(initialTotal);
     await expect(computersListPage.paginationBlock.getPaginationBlockText()).toEqual(`Displaying 1 to 10 of ${initialTotal}`);
   });
 
   it("Pagination should show the correct text after clicking next button", async () => {
     const initialTotal = await computersListPage.getComputersCount();
-    console.log(initialTotal);
     await computersListPage.paginationBlock.clickNextButton();
     await expect(computersListPage.paginationBlock.getPaginationBlockText()).toEqual(`Displaying 11 to 20 of ${initialTotal}`);
   });
 
   it("Pagination should show the correct text after clicking next and prev button", async () => {
     const initialTotal = await computersListPage.getComputersCount();
-    console.log(initialTotal);
     await computersListPage.paginationBlock.clickNextButton();
     await computersListPage.paginationBlock.clickPreviousButton();
     expect(computersListPage.paginationBlock.getPaginationBlockText()).toEqual(`Displaying 1 to 10 of ${initialTotal}`);

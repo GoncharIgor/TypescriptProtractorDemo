@@ -19,12 +19,12 @@ const computersBaseConfig = {
   specs: ["../tests/*.js"],
   suites: {},
   params: {
-    downloadPath: downloadPath,
+    downloadPath,
     remote: false,
     baseUrl: "http://computer-database.herokuapp.com",
   },
-  onPrepare: onPrepare,
-  onComplete: onComplete
+  onPrepare,
+  onComplete
 };
 
 exports.config = computersBaseConfig;
