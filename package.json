@@ -1,6 +1,6 @@
 {
   "name": "computers-db",
-  "version": "1.0.0-develop.4",
+  "version": "1.0.0-develop.5",
   "desription": "E2E Tests For Computer database",
   "author": "Igor Gonchar",
   "devDependencies": {

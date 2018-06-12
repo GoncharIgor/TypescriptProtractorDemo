@@ -1,8 +1,9 @@
-const _ = require("lodash");
-const baseConfig = require("./base.conf");
-export{};
+import {_} from "lodash";
+import {computersBaseConfig} from "./base.conf";
 
-const config = {
+export {};
+
+export const config = _.merge(computersBaseConfig, {
   capabilities: {
     browserName: "chrome",
     chromeOptions: {
@@ -17,6 +18,4 @@ const config = {
     }
   },
   chromeDriver: ("../../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.38" + (process.platform.indexOf("win") === 0 ? ".exe" : ""))
-};
-
-exports.config = _.merge(baseConfig.config, config);
+});

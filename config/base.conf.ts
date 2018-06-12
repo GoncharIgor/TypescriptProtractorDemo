@@ -9,7 +9,7 @@ const log4jsConfig = require("./log4js");
 const log4js = require("log4js");
 import {browser} from "protractor";
 
-const computersBaseConfig = {
+export const computersBaseConfig = {
   framework: "jasmine2",
   seleniumServerJar: jar.path,
   allScriptsTimeout: 20000,
@@ -26,8 +26,6 @@ const computersBaseConfig = {
   onPrepare,
   onComplete
 };
-
-exports.config = computersBaseConfig;
 
 function onPrepare() {
   log4jsConfig.call();

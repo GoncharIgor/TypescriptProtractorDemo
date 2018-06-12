@@ -1,8 +1,9 @@
-const _ = require('lodash');
-const baseConfig = require('./base.conf');
-export{};
+import {_} from "lodash";
+import {computersBaseConfig} from "./base.conf";
 
-const config = {
+export {};
+
+export const config = _.merge(computersBaseConfig, {
   capabilities: {
     browserName: 'internet explorer',
     platform: 'ANY',
@@ -14,6 +15,4 @@ const config = {
   localSeleniumStandaloneOpts: {
     jvmArgs: ['-Dwebdriver.ie.driver=node_modules/protractor/node_modules/webdriver-manager/selenium/IEDriverServer3.12.0.exe']
   }
-};
-
-exports.config = _.merge(baseConfig.config, config);
+});
