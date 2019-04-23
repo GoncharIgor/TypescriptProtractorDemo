@@ -1,7 +1,7 @@
-import {EditComputerPage} from "../page.objects/edit.computer.page";
-import {ComputersListPage} from "../page.objects/computers.list.page";
+import {EditComputerPage} from "../page.objects/pages/edit.computer.page";
+import {ComputersListPage} from "../page.objects/pages/computers.list.page";
 import {browser} from "protractor";
-import {AddNewComputerPage} from "../page.objects/add.new.computer.page";
+import {AddNewComputerPage} from "../page.objects/pages/add.new.computer.page";
 import {StringHelper} from "../helpers/string.helper";
 
 describe("AMOUNT: Total computers amount check", () => {

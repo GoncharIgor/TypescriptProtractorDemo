@@ -1,5 +1,5 @@
 import {browser} from "protractor";
-import {AddNewComputerPage} from "../page.objects/add.new.computer.page";
+import {AddNewComputerPage} from "../page.objects/pages/add.new.computer.page";
 
 describe("VALIDATION: Add new computer validation functionality works correctly", () => {
   const addNewComputerPage = new AddNewComputerPage();

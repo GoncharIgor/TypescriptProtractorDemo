@@ -1,9 +1,9 @@
 import {$, by, element, ElementFinder} from "protractor";
 
 import {BaseComputerPage} from "./base.computer.page";
-import {ComputerSearchForm} from "./page.fragments/computer.search.form";
-import {ComputerTable} from "./page.fragments/computer.table";
-import {Pagination} from "./page.fragments/pagination";
+import {ComputerSearchForm} from "../page.components/computer.search.form";
+import {ComputerTable} from "../page.components/computer.table";
+import {Pagination} from "../page.components/pagination";
 
 export class ComputersListPage extends BaseComputerPage {
   computerSearchForm: ComputerSearchForm;

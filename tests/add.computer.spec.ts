@@ -1,6 +1,6 @@
-import {AddNewComputerPage} from "../page.objects/add.new.computer.page";
+import {AddNewComputerPage} from "../page.objects/pages/add.new.computer.page";
 import {browser} from "protractor";
-import {ComputersListPage} from "../page.objects/computers.list.page";
+import {ComputersListPage} from "../page.objects/pages/computers.list.page";
 import {StringHelper} from "../helpers/string.helper";
 
 const testComputerInitial = require("./../../test.data/computer.json");

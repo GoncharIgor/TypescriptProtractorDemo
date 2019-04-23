@@ -1,5 +1,5 @@
 import {browser} from "protractor";
-import {ComputersListPage} from "../page.objects/computers.list.page";
+import {ComputersListPage} from "../page.objects/pages/computers.list.page";
 
 describe("PAGINATION: Computer-database index page layout verification", () => {
   const computersListPage = new ComputersListPage();
