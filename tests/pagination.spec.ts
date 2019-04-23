@@ -5,10 +5,6 @@ describe("PAGINATION: Computer-database index page layout verification", () => {
   const computersListPage = new ComputersListPage();
   beforeEach(() => browser.get("http://computer-database.herokuapp.com/computers"));
 
-  it("Pagination block should be visible", async () => {
-    await expect(computersListPage.paginationBlock.isDisplayed()).toBe(true);
-  });
-
   it("Pagination NEXT button should be visible", async () => {
     await  expect(computersListPage.paginationBlock.paginationNextButton.isDisplayed()).toBe(true);
   });

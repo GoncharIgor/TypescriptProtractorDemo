@@ -1,4 +1,5 @@
 import {$, browser, ElementFinder} from "protractor";
+
 import {BasePage} from "./base.page";
 
 export abstract class BaseComputerPage extends BasePage {

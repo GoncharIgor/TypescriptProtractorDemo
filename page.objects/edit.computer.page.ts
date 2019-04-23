@@ -1,4 +1,5 @@
 import {$, ElementFinder} from "protractor";
+
 import {AddNewComputerPage} from "./add.new.computer.page";
 
 export class EditComputerPage extends AddNewComputerPage {

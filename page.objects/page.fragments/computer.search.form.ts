@@ -1,14 +1,12 @@
-import {BaseFragment} from "protractor-element-extend";
-import {by, element, ElementFinder} from "protractor";
+import {by, ElementFinder} from "protractor";
 
-export class ComputerSearchForm extends BaseFragment {
+export class ComputerSearchForm {
   filterInputField: ElementFinder;
   filterSubmitButton: ElementFinder;
 
   constructor(rootElement: ElementFinder) {
-    super(rootElement);
-    this.filterInputField = element(by.id("searchbox"));
-    this.filterSubmitButton = element(by.id("searchsubmit"));
+    this.filterInputField = rootElement.element(by.id("searchbox"));
+    this.filterSubmitButton = rootElement.element(by.id("searchsubmit"));
   }
 
   public async findComputerInTheTable(computerName: string) {

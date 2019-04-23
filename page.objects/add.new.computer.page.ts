@@ -1,9 +1,10 @@
 import {$, browser, by, element, ElementFinder} from "protractor";
+
 import {AddComputerForm} from "./page.fragments/add.computer.form";
 import {BaseComputerPage} from "./base.computer.page";
 
 export class AddNewComputerPage extends BaseComputerPage {
-  addComputerForm: ElementFinder;
+  addComputerForm: AddComputerForm;
   createThisComputerButton: ElementFinder;
   cancelButton: ElementFinder;
   emptyComputerNameErrorNotification: ElementFinder;

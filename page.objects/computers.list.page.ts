@@ -1,15 +1,16 @@
 import {$, by, element, ElementFinder} from "protractor";
+
 import {BaseComputerPage} from "./base.computer.page";
 import {ComputerSearchForm} from "./page.fragments/computer.search.form";
 import {ComputerTable} from "./page.fragments/computer.table";
 import {Pagination} from "./page.fragments/pagination";
 
 export class ComputersListPage extends BaseComputerPage {
-  computerSearchForm: ElementFinder;
-  computerTable: ElementFinder;
+  computerSearchForm: ComputerSearchForm;
+  computerTable: ComputerTable;
   addNewComputerButton: ElementFinder;
   messageWarning: ElementFinder;
-  paginationBlock: ElementFinder;
+  paginationBlock: Pagination;
 
   constructor(private title: string = "computers found") {
     super(title);
@@ -25,7 +26,7 @@ export class ComputersListPage extends BaseComputerPage {
   }
 
   public async getComputersCount() {
-    let count = await this.pageHeader.getText();
+    const count = await this.pageHeader.getText();
     return count.replace(/[^\/\d]/g, "");
   }
 }
