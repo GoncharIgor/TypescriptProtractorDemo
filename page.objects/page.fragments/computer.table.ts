@@ -1,16 +1,17 @@
 import {$, by, element, ElementArrayFinder, ElementFinder} from "protractor";
-import {ArrayHelpers} from "../../helpers/array.helpers";
 import {BaseFragment} from "protractor-element-extend";
+
+import {ArrayHelpers} from "../../helpers/array.helpers";
 import {ComputerSearchForm} from "./computer.search.form";
 
 const computerSearch = new ComputerSearchForm($("#actions form"));
 
 export class ComputerTable extends BaseFragment {
-  tableHeaderColumns: ElementArrayFinder;
-  computerNamesInTheTable: ElementArrayFinder;
-  computerIntroducedDateInTheTable: ElementFinder;
-  computerDiscontinuedDateInTheTable: ElementFinder;
-  computerCompanyNameInTheTable: ElementFinder;
+  public computerNamesInTheTable: ElementArrayFinder;
+  private tableHeaderColumns: ElementArrayFinder;
+  private computerIntroducedDateInTheTable: ElementFinder;
+  private computerDiscontinuedDateInTheTable: ElementFinder;
+  private computerCompanyNameInTheTable: ElementFinder;
 
   constructor(rootElement) {
     super(rootElement);

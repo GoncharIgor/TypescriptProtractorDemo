@@ -1,8 +1,8 @@
 import {by, ElementFinder} from "protractor";
 
 export class ComputerSearchForm {
-  filterInputField: ElementFinder;
-  filterSubmitButton: ElementFinder;
+  private filterInputField: ElementFinder;
+  private filterSubmitButton: ElementFinder;
 
   constructor(rootElement: ElementFinder) {
     this.filterInputField = rootElement.element(by.id("searchbox"));
