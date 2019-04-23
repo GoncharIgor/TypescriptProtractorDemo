@@ -20,4 +20,5 @@ tasks.json
 .vscode
 dist
 target
+typescript
 

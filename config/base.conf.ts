@@ -11,10 +11,11 @@ import {browser} from "protractor";
 
 export const computersBaseConfig = {
   framework: "jasmine2",
-  seleniumServerJar: jar.path,
+  //seleniumServerJar: jar.path,
+  seleniumAddress: 'http://localhost:4444/wd/hub/',
   allScriptsTimeout: 20000,
   jasmineNodeOpts: {
-    defaultTimeoutInterval: 100000
+    defaultTimeoutInterval: 20000
   },
   specs: ["../tests/*.js"],
   suites: {},
@@ -33,7 +34,7 @@ function onPrepare() {
 
   browser.manage().window().setSize(1280, 1024);
   browser.manage().timeouts().implicitlyWait(3000);
-  browser.ignoreSynchronization = true;
+  browser.waitForAngularEnabled(false);
 
   require("../helpers/matchers");
 
