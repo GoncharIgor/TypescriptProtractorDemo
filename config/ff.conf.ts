@@ -1,5 +1,5 @@
-import {_} from "lodash";
-import {computersBaseConfig} from "./base.conf";
+import {_} from 'lodash';
+import {computersBaseConfig} from './base.conf';
 
 export {};
 

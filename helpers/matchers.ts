@@ -4,7 +4,7 @@ beforeEach(() => {
   jasmine.addMatchers({
     toBeArrayCaseInsensetive: () => {
       return {
-        compare: function (actual, expected) {
+        compare(actual, expected) {
           return {
             pass: matchArray(arrayToUpperCase(actual), arrayToUpperCase(expected))
           };
@@ -16,9 +16,9 @@ beforeEach(() => {
   jasmine.addMatchers({
     toBeCaseInsensetive: () => {
       return {
-        compare: function (actual, expected) {
+        compare(actual, expected) {
           return {
-            pass: actual.toUpperCase()===expected.toUpperCase()
+            pass: actual.toUpperCase() === expected.toUpperCase()
           };
         }
       };

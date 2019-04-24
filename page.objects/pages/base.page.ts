@@ -1,4 +1,4 @@
-import {$, browser, protractor} from "protractor";
+import {$, browser, protractor} from 'protractor';
 
 export abstract class BasePage {
   protected pageTitle: string;
@@ -16,6 +16,6 @@ export abstract class BasePage {
   }
 
   public async clickTab() {
-    await $("body").sendKeys(protractor.Key.TAB);
+    await $('body').sendKeys(protractor.Key.TAB);
   }
 }

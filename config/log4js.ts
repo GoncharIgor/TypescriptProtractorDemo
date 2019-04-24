@@ -1,4 +1,4 @@
-const log4js = require("log4js");
+const log4js = require('log4js');
 
 module.exports = () => {
   log4js.configure({
@@ -13,4 +13,3 @@ module.exports = () => {
     }
   });
 };
-

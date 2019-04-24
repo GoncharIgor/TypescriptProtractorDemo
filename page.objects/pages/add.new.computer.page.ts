@@ -1,20 +1,20 @@
-import {$, browser, by, element, ElementFinder} from "protractor";
+import {$, browser, by, element, ElementFinder} from 'protractor';
 
-import {AddComputerForm} from "../page.components/add.computer.form";
-import {BaseComputerPage} from "./base.computer.page";
+import {AddComputerForm} from '../page.components/add.computer.form';
+import {BaseComputerPage} from './base.computer.page';
 
 export class AddNewComputerPage extends BaseComputerPage {
-  addComputerForm: AddComputerForm;
-  createThisComputerButton: ElementFinder;
-  cancelButton: ElementFinder;
-  emptyComputerNameErrorNotification: ElementFinder;
+  public addComputerForm: AddComputerForm;
+  public createThisComputerButton: ElementFinder;
+  public cancelButton: ElementFinder;
+  public emptyComputerNameErrorNotification: ElementFinder;
 
-  constructor(private title: string = "Add a computer") {
+  constructor(private title: string = 'Add a computer') {
     super(title);
-    this.addComputerForm = new AddComputerForm($("form fieldset"));
-    this.createThisComputerButton = $(".btn.primary");
-    this.cancelButton = element(by.linkText("Cancel"));
-    this.emptyComputerNameErrorNotification = $("fieldset div:nth-child(1)");
+    this.addComputerForm = new AddComputerForm($('form fieldset'));
+    this.createThisComputerButton = $('.btn.primary');
+    this.cancelButton = element(by.linkText('Cancel'));
+    this.emptyComputerNameErrorNotification = $('fieldset div:nth-child(1)');
   }
 
   public async addComputer(name: string, introducedDate: string, discontinuedDate: string, company: string) {

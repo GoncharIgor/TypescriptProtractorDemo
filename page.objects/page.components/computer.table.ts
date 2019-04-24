@@ -1,10 +1,10 @@
-import {$, by, element, ElementArrayFinder, ElementFinder} from "protractor";
-import {BaseFragment} from "protractor-element-extend";
+import {$, by, element, ElementArrayFinder, ElementFinder} from 'protractor';
+import {BaseFragment} from 'protractor-element-extend';
 
-import {ArrayHelpers} from "../../helpers/array.helpers";
-import {ComputerSearchForm} from "./computer.search.form";
+import {ArrayHelpers} from '../../helpers/array.helpers';
+import {ComputerSearchForm} from './computer.search.form';
 
-const computerSearch = new ComputerSearchForm($("#actions form"));
+const computerSearch = new ComputerSearchForm($('#actions form'));
 
 export class ComputerTable extends BaseFragment {
   public computerNamesInTheTable: ElementArrayFinder;
@@ -15,11 +15,11 @@ export class ComputerTable extends BaseFragment {
 
   constructor(rootElement) {
     super(rootElement);
-    this.tableHeaderColumns = element.all(by.tagName("th"));
-    this.computerNamesInTheTable = element.all(by.css(".computers.zebra-striped>tbody>tr>td>a"));
-    this.computerIntroducedDateInTheTable = $(".computers.zebra-striped>tbody>tr>td:nth-child(2)");
-    this.computerDiscontinuedDateInTheTable = $(".computers.zebra-striped>tbody>tr>td:nth-child(3)");
-    this.computerCompanyNameInTheTable = $(".computers.zebra-striped>tbody>tr>td:nth-child(4)");
+    this.tableHeaderColumns = element.all(by.tagName('th'));
+    this.computerNamesInTheTable = element.all(by.css('.computers.zebra-striped>tbody>tr>td>a'));
+    this.computerIntroducedDateInTheTable = $('.computers.zebra-striped>tbody>tr>td:nth-child(2)');
+    this.computerDiscontinuedDateInTheTable = $('.computers.zebra-striped>tbody>tr>td:nth-child(3)');
+    this.computerCompanyNameInTheTable = $('.computers.zebra-striped>tbody>tr>td:nth-child(4)');
   }
 
   public async getTableColumnsAmount() {

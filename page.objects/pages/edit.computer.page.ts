@@ -1,13 +1,13 @@
-import {$, ElementFinder} from "protractor";
+import {$, ElementFinder} from 'protractor';
 
-import {AddNewComputerPage} from "./add.new.computer.page";
+import {AddNewComputerPage} from './add.new.computer.page';
 
 export class EditComputerPage extends AddNewComputerPage {
-  deleteThisComputerButton: ElementFinder;
+  public deleteThisComputerButton: ElementFinder;
 
   constructor() {
     super();
-    this.deleteThisComputerButton = $(".btn.danger");
+    this.deleteThisComputerButton = $('.btn.danger');
   }
 
   public async deleteComputer() {

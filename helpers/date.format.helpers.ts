@@ -1,12 +1,12 @@
-const moment = require("moment");
-const dateFormat = "DD/MM/YYYY";
+const moment = require('moment');
+const dateFormat = 'DD/MM/YYYY';
 
 class DateFormatter {
   /**
    * Get the current date
    * @returns {String}
    */
-  static getCurrentDate() {
+  public static getCurrentDate() {
     return moment().format(dateFormat);
   }
 
@@ -17,8 +17,8 @@ class DateFormatter {
    * @returns {String}
    */
   public static incrementDatePerNumberOfDays(date, numberOfDays) {
-    let initialDate = moment(date, dateFormat);
-    return initialDate.add(numberOfDays, "days");
+    const initialDate = moment(date, dateFormat);
+    return initialDate.add(numberOfDays, 'days');
   }
 
   /**
@@ -28,8 +28,8 @@ class DateFormatter {
    * @returns {String}
    */
   public static incrementDatePerNumberOfMonths(date, numberOfMonths) {
-    let initialDate = moment(date, dateFormat);
-    return initialDate.add(numberOfMonths, "M");
+    const initialDate = moment(date, dateFormat);
+    return initialDate.add(numberOfMonths, 'M');
   }
 }
 
