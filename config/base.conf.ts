@@ -1,28 +1,28 @@
-const path = require("path");
-const del = require("del");
-const jar = require("selenium-server-standalone-jar");
-const SpecReporter = require("jasmine-spec-reporter").SpecReporter;
-const downloadPath = path.join(__dirname, "\\downloads", "\\" + Date.now());
-const AllureReporter = require("jasmine-allure-reporter");
-const allureResultsPath = path.join("./target/allure-xml-report");
-const log4jsConfig = require("./log4js");
-const log4js = require("log4js");
-import {browser} from "protractor";
+const path = require('path');
+const del = require('del');
+const jar = require('selenium-server-standalone-jar');
+const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
+const downloadPath = path.join(__dirname, '\\downloads', '\\' + Date.now());
+const AllureReporter = require('jasmine-allure-reporter');
+const allureResultsPath = path.join('./target/allure-xml-report');
+const log4jsConfig = require('./log4js');
+const log4js = require('log4js');
+import {browser} from 'protractor';
 
 export const computersBaseConfig = {
-  framework: "jasmine2",
-  //seleniumServerJar: jar.path,
+  framework: 'jasmine2',
+  // seleniumServerJar: jar.path,
   seleniumAddress: 'http://localhost:4444/wd/hub/',
   allScriptsTimeout: 20000,
   jasmineNodeOpts: {
     defaultTimeoutInterval: 20000
   },
-  specs: ["../tests/*.js"],
+  specs: ['../tests/*.js'],
   suites: {},
   params: {
     downloadPath,
     remote: false,
-    baseUrl: "http://computer-database.herokuapp.com",
+    baseUrl: 'http://computer-database.herokuapp.com'
   },
   onPrepare,
   onComplete
@@ -30,13 +30,13 @@ export const computersBaseConfig = {
 
 function onPrepare() {
   log4jsConfig.call();
-  browser.logger = log4js.getLogger("BASE_LOGGER");
+  browser.logger = log4js.getLogger('BASE_LOGGER');
 
   browser.manage().window().setSize(1280, 1024);
   browser.manage().timeouts().implicitlyWait(3000);
   browser.waitForAngularEnabled(false);
 
-  require("../helpers/matchers");
+  require('../helpers/matchers');
 
   // add jasmine spec reporter
   jasmine.getEnv().addReporter(new SpecReporter({
@@ -46,7 +46,7 @@ function onPrepare() {
       displayErrorMessages: true,
       displayStacktrace: true,
       displayNumber: true,
-      displayDuration: true,
+      displayDuration: true
     },
     summary: {
       displaySuccessful: true,
@@ -54,17 +54,17 @@ function onPrepare() {
       displayErrorMessages: true,
       displayStacktrace: true,
       displayNumber: true,
-      displayDuration: true,
+      displayDuration: true
     },
     colors: {
-      success: "green",
-      failure: "red",
-      pending: "yellow"
+      success: 'green',
+      failure: 'red',
+      pending: 'yellow'
     },
     prefixes: {
-      success: "✓ ",
-      failure: "✗ ",
-      pending: "* "
+      success: '✓ ',
+      failure: '✗ ',
+      pending: '* '
     },
     customProcessors: []
   }));
