@@ -1,9 +1,9 @@
 import * as _ from 'lodash';
 import {browser} from 'protractor';
 
-const requestOptions = JSON.parse(JSON.stringify(require('../common.request.options')));
+const commonRequestOptions = _.cloneDeep(require('../common.request.options'));
 
-module.exports = _.merge(requestOptions, {
+module.exports = _.merge(commonRequestOptions, {
   method: 'POST',
   uri: `${browser.params.baseUrl}/computers`
 });

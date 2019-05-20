@@ -1,5 +1,5 @@
-const rp = require('request-promise');
 import {browser} from 'protractor';
+const rp = require('request-promise');
 
 const addComputerRequest = require('./request.models/add.computer/add.computer');
 
