@@ -1,5 +1,5 @@
-import _ from 'lodash';
-import {$, browser} from 'protractor';
+import * as _ from 'lodash';
+import {browser} from 'protractor';
 
 const requestOptions = JSON.parse(JSON.stringify(require('../common.request.options')));
 

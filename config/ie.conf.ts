@@ -1,7 +1,6 @@
-import {_} from 'lodash';
-import {computersBaseConfig} from './base.conf';
+import * as _ from 'lodash';
 
-export {};
+import {computersBaseConfig} from './base.conf';
 
 export const config = _.merge(computersBaseConfig, {
   capabilities: {

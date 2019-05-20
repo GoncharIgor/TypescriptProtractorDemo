@@ -1,18 +1,19 @@
-const path = require('path');
+const AllureReporter = require('jasmine-allure-reporter');
 const del = require('del');
 const jar = require('selenium-server-standalone-jar');
-const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
-const downloadPath = path.join(__dirname, '\\downloads', '\\' + Date.now());
-const AllureReporter = require('jasmine-allure-reporter');
-const allureResultsPath = path.join('./target/allure-xml-report');
-const log4jsConfig = require('./log4js');
 const log4js = require('log4js');
+const path = require('path');
+const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 import {browser} from 'protractor';
+
+const allureResultsPath = path.join('./target/allure-xml-report');
+const downloadPath = path.join(__dirname, '\\downloads', '\\' + Date.now());
+const log4jsConfig = require('./log4js');
 
 export const computersBaseConfig = {
   framework: 'jasmine2',
-  // seleniumServerJar: jar.path,
-  seleniumAddress: 'http://localhost:4444/wd/hub/',
+  seleniumServerJar: jar.path,
+  // seleniumAddress: 'http://localhost:4444/wd/hub/',
   allScriptsTimeout: 20000,
   jasmineNodeOpts: {
     defaultTimeoutInterval: 20000
