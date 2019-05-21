@@ -23,7 +23,8 @@ export const computersBaseConfig = {
   params: {
     downloadPath,
     remote: false,
-    baseUrl: 'http://computer-database.herokuapp.com'
+    baseUrl: 'http://computer-database.herokuapp.com',
+    proxy: 'http://10.105.0.40:8080'
   },
   onPrepare,
   onComplete
