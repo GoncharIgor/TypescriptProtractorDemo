@@ -1,5 +1,5 @@
-import {cloneDeep, merge} from 'lodash';
 import {browser} from 'protractor';
+import {cloneDeep, merge} from 'lodash';
 
 const commonRequestOptions = cloneDeep(require('../common.request.options'));
 

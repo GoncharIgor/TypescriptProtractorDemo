@@ -43,7 +43,7 @@
     "clean": "rimraf typeScript/",
     "clean-build": "npm run clean && npm run build && npm run copy-jsons",
     "copy-jsons": "copyfiles **/**/*.json typescript/",
-    "test": "npm run clean-build && node config/flake.js typeScript/config/chrome.conf.js",
+    "test": "npm run clean-build && node config/flake.ts typeScript/config/chrome.conf.js",
     "wd-status": "node node_modules/protractor/bin/webdriver-manager status",
     "wd-update-chrome": "node node_modules/protractor/bin/webdriver-manager update --versions.chrome=2.44 --gecko false",
     "wd-update-firefox": "node node_modules/protractor/bin/webdriver-manager update --version.gecko='v0.19.1'",
